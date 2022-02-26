@@ -1,0 +1,67 @@
+FILE *fp;   FILE是个结构体， fp是结构体指针     指向被打开的文件
+打开文件：
+fp=fopen("文件"，“r”);   r 只读    w只写   。。。。。
+if（fp==NULL）
+{
+//文件打开失败,
+}
+
+关闭文件：
+系统写入时先存到缓存区，满了之后向文件中写，关闭文件会触发这个过程      如果不关闭文件会出现写入出错
+
+fclose（fp）;
+其他
+fputc（）
+foutc ( )
+EOF   是否读入结束
+feof    是否读入结束
+
+
+
+
+读写结构体
+用前先打开文件 
+fwrite(结构体，结构体字节数，数量，fp);
+fread(结构体，结构体字节数，数量，fp);
+用后关闭文件
+注意：
+结构体中不能用指针
+注意内存对齐问题    解决方法：  #pragma pack(1)//放在结构体定义上面 1字节对齐
+
+
+
+
+
+
+
+for(auto &i : j ) 使用引用省去拷贝的过程 ，可以提高效率
+
+
+
+
+迭代器：指针/可以加减
+vector<int>iv{1,2,3};
+vector<int>::iterator iter; //迭代器  和要操作的容器保持类型相同
+
+iter=iv.begin();//begin()返回一个迭代器类型
+     =iv.end();//返回最后一个元素+1
+
+for(iter=iv.begin;iter!=iv.end();iter++)
+
+反向迭代器          rbegin()   rend()    // rend（）指向第一个元素的前面
+for(iter.rbegin();iter!=rend();iter++)//从尾向前遍历
+const_iterator //常量迭代器，指向的内容不能修改      cbegin() cend() 返回常量迭代器
+
+
+
+
+
+
+
+
+
+
+
+
+
+
